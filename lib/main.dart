@@ -1,9 +1,11 @@
-import 'package:ecommerce_app/screens/home_page.dart';
+import 'package:ecommerce_app/screens/screens.onboarding/onboarding_screen.dart';
 import 'package:ecommerce_app/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 void main() {
-  runApp(const MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -17,6 +19,6 @@ class MyApp extends StatelessWidget {
         themeMode: ThemeMode.system,
         theme: AppTheme.lightTheme,
         darkTheme: AppTheme.darkTheme,
-        home: const HomePage());
+        home: const OnBoardingScreen());
   }
 }
